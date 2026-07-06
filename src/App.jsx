@@ -6,6 +6,7 @@ import { SearchBar } from './components/SearchBar';
 import { StatusFilter } from './components/StatusFilter';
 import { TestForm } from './components/TestForm';
 import { TestTable } from './components/TestTable';
+import { SortDropdown } from './components/SortDropdown';
 
 function App() {
   const { tests, addTest, updateTest, deleteTest} = useTests();
@@ -17,14 +18,9 @@ function App() {
 
   const visibleTests = getVisibleTests(tests, {query, statusFilter, sortKey, sortDir});
 
-  function handleSort(key) {
-    if (key === sortKey) {
-      setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
-    }
-    else{
-      setSortKey(key);
-      setSortDir('asc');
-    }
+  function handleSort(key, dir) {
+    setSortKey(key);
+    setSortDir(dir);
   }
 
   function handleSubmit(data) {
@@ -40,15 +36,19 @@ function App() {
   return (
     <div className = "app">
       <h1> Test Management Project</h1>
+
       <TestForm
       key = {editingTest?.id ?? 'new'}
       onSubmit={handleSubmit}
       existingTest = {editingTest}
       onCancel = {() => setEditingTest(null)}/>
+
       <div className="controls">
       <SearchBar query={query} onChange = {setQuery} />
       <StatusFilter statusFilter={statusFilter} onChange = {setStatusFilter} />
+      <SortDropdown sortKey={sortKey} sortDir={sortDir} onChange={handleSort} />
       </div>
+
       <TestTable
       tests={visibleTests}
       sortKey={sortKey}

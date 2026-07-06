@@ -1,11 +1,11 @@
-export function TestTable({tests, onSort, onEdit, onDelete}) {
+export function TestTable({tests, onEdit, onDelete}) {
     return(
         <table>
             <thead>
             <tr>
-                <th onClick={() =>onSort('name')}>Name</th>
-                <th onClick={() =>onSort('status')}>Status</th>
-                <th onClick={() =>onSort('lastModified')}>Last Modified</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Last Modified</th>
             </tr>
             </thead>
             <tbody>
