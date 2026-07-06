@@ -1,4 +1,4 @@
-export function TestTable({tests, sortKey, sortDir, onSort, onEdit, onDelete}) {
+export function TestTable({tests, onSort, onEdit, onDelete}) {
     return(
         <table>
             <thead>
