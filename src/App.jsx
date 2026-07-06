@@ -38,15 +38,17 @@ function App() {
 
   }
   return (
-    <div>
+    <div className = "app">
       <h1> Test Management Project</h1>
       <TestForm
       key = {editingTest?.id ?? 'new'}
       onSubmit={handleSubmit}
       existingTest = {editingTest}
       onCancel = {() => setEditingTest(null)}/>
+      <div className="controls">
       <SearchBar query={query} onChange = {setQuery} />
       <StatusFilter statusFilter={statusFilter} onChange = {setStatusFilter} />
+      </div>
       <TestTable
       tests={visibleTests}
       sortKey={sortKey}
