@@ -38,8 +38,8 @@ A small React coding task managing tests by name/status and last modified date/t
   - App.jsx
 
 # How to Run
-git clone <https://github.com/Dan-2000/Coding-Task>
-cd Coding-Task
-npm install
-npm run dev
-port:5173
+- git clone < https://github.com/Dan-2000/Coding-Task >
+- cd Coding-Task
+- npm install
+- npm run dev
+- port:5173
