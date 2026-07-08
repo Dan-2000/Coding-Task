@@ -1,6 +1,6 @@
 //Status Enum 
 export const STATUS = {
-    WAITING: 'waitng',
+    WAITING: 'waiting',
     PASSED: 'passed',
     FAILED: 'failed',
     SKIPPED: 'skipped',
